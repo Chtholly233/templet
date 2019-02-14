@@ -12,13 +12,13 @@ void swap(int &a,int &b){
 	a^=b^=a^=b;
 }
 
-void putdown(int x,int m){//ä¸‹æ²‰çš„ç‚¹çš„ä¸‹æ ‡&æœ€å¤§ä¸‹æ²‰ä¸‹æ ‡ 
+void putdown(int x,int m){//ÏÂ³ÁµÄµãµÄÏÂ±ê&×î´óÏÂ³ÁÏÂ±ê 
 	int l=lson(x),r=rson(x),tag;
 	if(l>m)return;
 	if(r<=m&&a[r]>a[l])tag=r;
-	else tag=l;           //æ‰¾åˆ°å·¦å³å„¿å­ä¸­æœ€[å¤§]çš„æ¥æ›¿æ¢
+	else tag=l;           //ÕÒµ½×óÓÒ¶ù×ÓÖĞ×î[´ó]µÄÀ´Ìæ»»
 	if(a[x]<a[tag])swap(a[x],a[tag]);
-	putdown(tag,m);//ç»§ç»­ä¸‹æ²‰
+	putdown(tag,m);//¼ÌĞøÏÂ³Á
 }
 
 void putup(int x){
@@ -35,16 +35,16 @@ void push(int num){
 
 void pop(){
 	swap(a[1],a[tot]);
-	printf("ä½ åˆšåˆšå¹²æ‰äº†å †é¡¶ï¼Œä»–çš„å€¼ä¸º%d\n",a[tot]);
+	printf("Äã¸Õ¸Õ¸ÉµôÁË¶Ñ¶¥£¬ËûµÄÖµÎª%d\n",a[tot]);
 	--tot;
 	putdown(1,tot);
 }
 
-//å¤§æ ¹å † 
+//´ó¸ù¶Ñ 
 int t;
 int main(){
 	scanf("%d",&t);
-	printf("input â€œ1â€for push,or input â€œ0â€ for popã€‚");
+	printf("input ¡°1¡±for push,or input ¡°0¡± for pop¡£");
 	for(int i=1;i<=t;i++){
 		int ques;
 		scanf("%d",&ques);
